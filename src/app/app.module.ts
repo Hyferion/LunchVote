@@ -11,6 +11,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PeopleServiceProvider } from '../providers/people-service/people-service';
 import { EmployeesProvider } from '../providers/employees/employees';
+import {LunchVoteConfig} from "../config/lunch-vote-config";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { EmployeesProvider } from '../providers/employees/employees';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PeopleServiceProvider,
-    EmployeesProvider
+    EmployeesProvider,
+    LunchVoteConfig
   ]
 })
 export class AppModule {}

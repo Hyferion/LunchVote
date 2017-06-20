@@ -23,11 +23,11 @@
     </ion-card-title>
     <div class="card-subtitle-black">{{restaurant.count}} Votes</div>
     </ion-card-content>
-    <button class="buttons-black" ion-button round color="light" button onclick="voteOne"> VOTE </button>
+    <button class="buttons-black" ion-button round color="light" button (click)="vote(restaurant.id)"> VOTE </button>
   </ion-card>
 </ion-item>
 
-<button ion-button round color="dark"> ESSEN </button>
+<button ion-button round color="dark" (click)="haveLunch()"> ESSEN </button>
 <button ion-button round color="dark"> SPLITTING </button>
 
 </ion-content>
