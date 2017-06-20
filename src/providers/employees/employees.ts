@@ -10,16 +10,16 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class EmployeesProvider {
-	data: any;
+	data1: any;
   constructor(public http: Http) {
     console.log('Hello EmployeesProvider Provider');
   }
 
 
  load() {
-  if (this.data) {
+  if (this.data1) {
     // already loaded data
-    return Promise.resolve(this.data);
+    return Promise.resolve(this.data1);
   }
 
   // don't have the data yet
@@ -29,12 +29,12 @@ export class EmployeesProvider {
     // Next, we process the data and resolve the promise with the new data.
     this.http.get('http://192.168.99.78:5000/employees')
       .map(res => res.json())
-      .subscribe(data => {
+      .subscribe(data1 => {
         // we've got back the raw data, now generate the core schedule data
         // and save the data for later reference
-        this.data = data;
-        console.log(data);
-        resolve(this.data);
+        this.data1 = data1;
+        console.log(data1);
+        resolve(this.data1);
 
       });
   });

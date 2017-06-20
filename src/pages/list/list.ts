@@ -16,6 +16,6 @@ export class ListPage {
   }
 
   loadEmployees(){
-    this.employees.load().then(data=>{this.item = data;});
+    this.employees.load().then(data => {this.item = data;});
   }
 }
