@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Splitting</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="splitting">
+  <ion-list padding>
+    <ion-item *ngFor="let restaurant of restaurants">
+      <ion-label color="dark" fixed>{{ restaurant.title }}</ion-label>
+      <ion-input type="number" [(ngModel)]="data[restaurant.id]"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div padding>
+    <button ion-button large round full color="dark" (click)="split()"> Split it! </button>
+  </div>
+</ion-content>

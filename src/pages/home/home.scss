@@ -1,48 +1,59 @@
-.card-background-page {
-
-  ion-card {
-    position: relative;
-    text-align: center;
-    
-  }
-
-  .card-black{
-   position: relative;
-    text-align: center;
-    background-color:black;
-  }
-
+.primary-card {
+  background-color: color($colors, primary);
+}
+.secondary-card {
+  background-color: color($colors, dark);
+  color: #ffffff;
   .card-title {
-    position: relative;
-    top: 50%;
-    font-size: 2.0em;
-    width: 100%;
-    font-weight: bold;
-    color: black;
+    color: #ffffff;
   }
-   .card-title-black {
-    position: relative;
-    top: 50%;
-    font-size: 2.0em;
-    width: 100%;
-    font-weight: bold;
-    color: white;
-  }
-
-  .card-subtitle {
-    font-size: 1.0em;
-    position: relative;
-    top: 52%;
-    width: 100%;
-    color: black;
-  }
-    .card-subtitle-black {
-    font-size: 1.0em;
-    position: relative;
-    top: 52%;
-    width: 100%;
-    color: white;
-  }
+}
+//
+.card-background-page {
+  //
+  //ion-card {
+  //  position: relative;
+  //  text-align: center;
+  //
+  //}
+  //
+  //.card-black{
+  // position: relative;
+  //  text-align: center;
+  //  background-color:black;
+  //}
+  //
+  //.card-title {
+  //  position: relative;
+  //  top: 50%;
+  //  font-size: 2.0em;
+  //  width: 100%;
+  //  font-weight: bold;
+  //  color: black;
+  //}
+  // .card-title-black {
+  //  position: relative;
+  //  top: 50%;
+  //  font-size: 2.0em;
+  //  width: 100%;
+  //  font-weight: bold;
+  //  color: white;
+  //}
+  //
+  //.card-subtitle {
+  //  font-size: 1.0em;
+  //  position: relative;
+  //  top: 52%;
+  //  width: 100%;
+  //  color: black;
+  //}
+  //  .card-subtitle-black {
+  //  font-size: 1.0em;
+  //  position: relative;
+  //  top: 52%;
+  //  width: 100%;
+  //  color: white;
+  //}
   
 
 }

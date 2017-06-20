@@ -1,44 +1,74 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { PeopleServiceProvider } from '../../providers/people-service/people-service';
+import {Component} from '@angular/core';
+import {NavController, AlertController} from 'ionic-angular';
 import {LunchService} from "../../providers/lunch/lunch";
 import {VoteService} from "../../providers/vote/vote";
-
+import {RestaurantServiceProvider} from "../../providers/restaurant-service/restaurant-service";
+import {LunchVoteSession} from "../../session/lunch-vote-session";
+import {EmployeesPage} from "../employees/employees";
+import {SplittingPage} from "../splitting/splitting";
 
 
 @Component({
-  selector: 'page-home',
-  providers: [PeopleServiceProvider, LunchService, VoteService],
-  templateUrl: 'home.html'
+    selector: 'page-home',
+    providers: [RestaurantServiceProvider, LunchService, VoteService],
+    templateUrl: 'home.html'
 })
 export class HomePage {
-	public restaurants:any;
 
-  constructor(public peopleService: PeopleServiceProvider, public lunchService: LunchService, public voteService: VoteService){
-  	this.loadRestaurants();
+    public restaurants: any;
+    protected user:string = '';
+    protected winnerRestaruantId:number = 0;
 
-  }
-  loadRestaurants(){
-  	this.peopleService.load()
-  	.then(data => {this.restaurants = data;});
-  }
+    constructor(public restaurantService: RestaurantServiceProvider,
+                public lunchService: LunchService,
+                public voteService: VoteService,
+                public alertCtrl: AlertController,
+                public sessionService: LunchVoteSession,
+                public navController: NavController) {
 
-  voteOne(){
-  	this.peopleService.setVote();
+    }
 
-  }
+    ionViewDidLoad() {
+        if (this.sessionService.hasUser()) {
+            this.user = this.sessionService.getUser();
+            this.loadRestaurants();
+        } else {
+            this.user = '';
+            this.navController.setRoot(EmployeesPage);
+        }
+    }
 
-  vote(restaurant_id:number) {
-      let fakeUser = 'gc@studer-raimann.ch';
-      this.voteService.vote(restaurant_id, fakeUser).then(() => {
-          console.log('Vote sucessful');
-      })
-  }
 
-  haveLunch() {
-      this.lunchService.haveLunch().then(restaurant => {
-          console.log(restaurant);
-      });
-  }
+    loadRestaurants() {
+        return this.restaurantService.load()
+            .then(data => {
+                this.restaurants = data;
+                return Promise.resolve(data);
+            });
+    }
+
+    vote(restaurant_id: number) {
+        this.voteService.vote(restaurant_id, this.sessionService.getUser()).then(() => {
+            this.loadRestaurants();
+        }).catch(() => {
+            let alert = this.alertCtrl.create({
+                title: 'Du Schlingel',
+                subTitle: 'Kannst nur einmal voten pro Tag!!',
+                buttons: ['OK']
+            });
+            alert.present();
+        })
+    }
+
+    doSplitting() {
+        this.navController.push(SplittingPage);
+    }
+
+    haveLunch() {
+        this.lunchService.haveLunch().then((winner_restaurant_id:number) => {
+            this.loadRestaurants();
+            this.winnerRestaruantId = winner_restaurant_id;
+        });
+    }
 
 }

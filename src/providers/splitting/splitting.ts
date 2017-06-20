@@ -4,17 +4,18 @@ import 'rxjs/add/operator/map';
 import {LunchVoteConfig} from "../../config/lunch-vote-config";
 
 @Injectable()
-export class VoteService {
+export class SplittingService {
 
     constructor(public http: Http, public config: LunchVoteConfig
     ) {
 
     }
 
-    public vote(restaurant_id:number, email:string) {
+    public split(data) {
         return new Promise((resolve, reject) => {
-            let endpoint = this.config.get('rest_endpoint') + '/vote';
-            let body = 'restaurant_id=' + restaurant_id + '&email=' + email;
+            let endpoint = this.config.get('rest_endpoint') + '/splitting';
+            let body = 'data=' + JSON.stringify(data);
+            console.log(body);
             let headers = new Headers();
             headers.append('Content-Type', 'application/x-www-form-urlencoded');
             this.http.post(endpoint, body, {headers: headers})

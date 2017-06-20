@@ -1,42 +1,48 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import {BrowserModule} from '@angular/platform-browser';
+import {ErrorHandler, NgModule} from '@angular/core';
+import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
-import { HttpModule } from '@angular/http';
+import {MyApp} from './app.component';
+import {HomePage} from '../pages/home/home';
+import {HttpModule} from '@angular/http';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { PeopleServiceProvider } from '../providers/people-service/people-service';
-import { EmployeesProvider } from '../providers/employees/employees';
+import {StatusBar} from '@ionic-native/status-bar';
+import {SplashScreen} from '@ionic-native/splash-screen';
+// import { PeopleServiceProvider } from '../providers/people-service/people-service';
+// import { EmployeesProvider } from '../providers/employees/employees';
 import {LunchVoteConfig} from "../config/lunch-vote-config";
+import {LunchVoteSession} from "../session/lunch-vote-session";
+import {EmployeesPage} from "../pages/employees/employees";
+import {SplittingPage} from "../pages/splitting/splitting";
 
 @NgModule({
-  declarations: [
-    MyApp,
-    HomePage,
-    ListPage
-  ],
-  imports: [
-    BrowserModule,
-    HttpModule,
-    IonicModule.forRoot(MyApp),
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    HomePage,
-    ListPage
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PeopleServiceProvider,
-    EmployeesProvider,
-    LunchVoteConfig
-  ]
+    declarations: [
+        MyApp,
+        HomePage,
+        EmployeesPage,
+        SplittingPage
+    ],
+    imports: [
+        BrowserModule,
+        HttpModule,
+        IonicModule.forRoot(MyApp),
+    ],
+    bootstrap: [IonicApp],
+    entryComponents: [
+        MyApp,
+        HomePage,
+        EmployeesPage,
+        SplittingPage
+    ],
+    providers: [
+        StatusBar,
+        SplashScreen,
+        {provide: ErrorHandler, useClass: IonicErrorHandler},
+        // PeopleServiceProvider,
+        // EmployeesProvider,
+        LunchVoteConfig,
+        LunchVoteSession
+    ]
 })
-export class AppModule {}
+export class AppModule {
+}
