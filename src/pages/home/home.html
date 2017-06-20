@@ -1,18 +1,35 @@
+
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>SRAG LUNCH VOTE 2.0</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <h1>SRAG LUNCH VOTE 2.0</h1>
+  
+  
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+<ion-content class="card-background-page">
+ <ion-item *ngFor="let restaurant of restaurants">
+  <ion-card class="card-black">
+ 
+    <ion-card-content>
+    <ion-card-title>
+    <div class="card-title-black">{{restaurant.title}}</div>
+    </ion-card-title>
+    <div class="card-subtitle-black">{{restaurant.count}} Votes</div>
+    </ion-card-content>
+    <button class="buttons-black" ion-button round color="light" button onclick="voteOne"> VOTE </button>
+  </ion-card>
+</ion-item>
+
+<button ion-button round color="dark"> ESSEN </button>
+<button ion-button round color="dark"> SPLITTING </button>
+
 </ion-content>
+
+
