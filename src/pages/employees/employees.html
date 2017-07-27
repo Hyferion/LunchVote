@@ -1,18 +1,16 @@
 <ion-header>
-  <ion-navbar>
-    <!--<button ion-button menuToggle>-->
-      <!--<ion-icon name="menu"></ion-icon>-->
-    <!--</button>-->
-    <ion-title>Wähle dein Account</ion-title>
+  <ion-navbar class="header">
+    <ion-card class="srag">
+      <img class="srag" src="https://be-advanced.ch/wp-content/uploads/2017/06/logo-studer-reimann-1200x480.jpg">
+    </ion-card>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="home">
   <ion-list>
-    <ion-item *ngFor="let employee of employees">
-      <h2>{{employee.name}}</h2>
-      <p>{{employee.email}}</p>
-      <button ion-button round color="dark" (click)="selectAccount(employee.email)"> That's me </button>
+    <ion-item class="item" color="light" *ngFor="let employee of employees">
+      <button ion-button round color="dark" (click)="selectAccount(employee.email)"> <h1> {{employee.name}} </h1> <h6>{{employee.email}}</h6></button>
     </ion-item>
+        <button class="header-btn1" ion-button round color="light" (click)="addEmployee()"> ADD Employee </button>
   </ion-list>
 </ion-content>

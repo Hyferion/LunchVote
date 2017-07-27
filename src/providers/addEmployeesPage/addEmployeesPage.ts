@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
   for more info on providers and Angular DI.
 */
 @Injectable()
-export class EmployeesProvider {
+export class addEmployeesPageProvider {
 	data1: any;
   constructor(public http: Http) {
     console.log('Hello EmployeesProvider Provider');

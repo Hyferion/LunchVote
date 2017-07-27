@@ -3,6 +3,8 @@ import {NavController, NavParams} from 'ionic-angular';
 import {EmployeesProvider} from '../../providers/employees/employees';
 import {LunchVoteSession} from "../../session/lunch-vote-session";
 import {HomePage} from "../home/home";
+import {AddEmployeePage} from "../addEmployeePage/addEmployeePage";
+import {RestaurantPage} from "../restaurantPage/restaurantPage";
 
 @Component({
     selector: 'employees-list',
@@ -29,4 +31,8 @@ export class EmployeesPage {
         this.sessionService.setUser(email);
         this.navController.setRoot(HomePage);
     }
+    addEmployee(){
+    this.navController.push(AddEmployeePage);
+    }
+
 }

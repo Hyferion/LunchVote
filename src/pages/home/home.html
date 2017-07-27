@@ -4,18 +4,20 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>SRAG LUNCH VOTE 2.0 / {{ user }}</ion-title>
+    <ion-title>SRAG LUNCH VOTE 2.0 / {{ user }} <ion-buttons end>
+      <button class="header-btn" ion-button round color="dark" (click)="addRestaurant()"> ADD Restaurant</button>
+</ion-buttons>
+</ion-title>
   </ion-navbar>
 </ion-header>
 
 
   <h1>SRAG LUNCH VOTE 2.0</h1>
-  
-  
+
+
 
 <ion-content class="card-background-page">
  <ion-item *ngFor="let restaurant of restaurants">
-  <!--<ion-card class="card-black">-->
   <ion-card [ngClass]="{'primary-card': restaurant.id == winnerRestaruantId, 'secondary-card': restaurant.id != winnerRestaruantId}">
     <ion-card-content>
     <ion-card-title>
@@ -29,10 +31,8 @@
   </ion-card>
 </ion-item>
 <div padding>
-<button ion-button large full round color="primary" (click)="haveLunch()"> ESSEN </button>
-<button ion-button large full round color="dark" (click)="doSplitting()"> SPLITTING </button>
+<button class="red" ion-button large full round color="light" (click)="haveLunch()"> ESSEN </button>
+<button class="white" ion-button large full round color="dark" (click)="doSplitting()"> SPLITTING </button>
 </div>
 
 </ion-content>
-
-

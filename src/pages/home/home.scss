@@ -1,59 +1,44 @@
 .primary-card {
-  background-color: color($colors, primary);
+  background-color: #B90B34;
 }
 .secondary-card {
-  background-color: color($colors, dark);
+  background-color: #000000;
   color: #ffffff;
   .card-title {
     color: #ffffff;
   }
 }
-//
-.card-background-page {
-  //
-  //ion-card {
-  //  position: relative;
-  //  text-align: center;
-  //
-  //}
-  //
-  //.card-black{
-  // position: relative;
-  //  text-align: center;
-  //  background-color:black;
-  //}
-  //
-  //.card-title {
-  //  position: relative;
-  //  top: 50%;
-  //  font-size: 2.0em;
-  //  width: 100%;
-  //  font-weight: bold;
-  //  color: black;
-  //}
-  // .card-title-black {
-  //  position: relative;
-  //  top: 50%;
-  //  font-size: 2.0em;
-  //  width: 100%;
-  //  font-weight: bold;
-  //  color: white;
-  //}
-  //
-  //.card-subtitle {
-  //  font-size: 1.0em;
-  //  position: relative;
-  //  top: 52%;
-  //  width: 100%;
-  //  color: black;
-  //}
-  //  .card-subtitle-black {
-  //  font-size: 1.0em;
-  //  position: relative;
-  //  top: 52%;
-  //  width: 100%;
-  //  color: white;
-  //}
-  
+.secondary-card:hover{
+  background-color: #B90B34;
+}
+.red{
+background-color: #B90B34;
+color: #ffffff;
+}
+.white{
+  background-color: white;
+  color:black;
+}
+.white:hover{
+  background-color: #B90B34;
+}
+.red:hover{
+  background-color: #B90B34;
+}
+button:hover{
+  color: #B90B34;
+}
+
+.card-title-black{
+  color: #ffffff;
+}
+.card-subtitle-black {
+  color: #ffffff;
+}
+.buttons-black{
+  background-color: #B90B34;
+  color: #ffffff;
+}
+.header-btn{
 
 }

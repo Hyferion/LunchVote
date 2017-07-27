@@ -14,13 +14,17 @@ import {LunchVoteConfig} from "../config/lunch-vote-config";
 import {LunchVoteSession} from "../session/lunch-vote-session";
 import {EmployeesPage} from "../pages/employees/employees";
 import {SplittingPage} from "../pages/splitting/splitting";
+import {AddEmployeePage} from "../pages/addEmployeePage/addEmployeePage";
+import {RestaurantPage} from "../pages/restaurantPage/restaurantPage";
 
 @NgModule({
     declarations: [
         MyApp,
         HomePage,
         EmployeesPage,
-        SplittingPage
+        SplittingPage,
+        RestaurantPage,
+        AddEmployeePage
     ],
     imports: [
         BrowserModule,
@@ -32,7 +36,9 @@ import {SplittingPage} from "../pages/splitting/splitting";
         MyApp,
         HomePage,
         EmployeesPage,
-        SplittingPage
+        SplittingPage,
+        RestaurantPage,
+        AddEmployeePage
     ],
     providers: [
         StatusBar,

@@ -4,7 +4,7 @@ import {Injectable} from '@angular/core';
 export class LunchVoteConfig {
 
     protected data:any = {
-        "rest_endpoint": "http://192.168.99.78:5000"
+        "rest_endpoint": "http://192.168.99.41:5000"
     };
 
     /**
@@ -18,4 +18,3 @@ export class LunchVoteConfig {
         return this.data[key];
     }
 }
-

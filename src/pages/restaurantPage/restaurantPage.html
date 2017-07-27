@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar class="header">
+    <ion-card class="srag">
+      <img class="srag" src="https://be-advanced.ch/wp-content/uploads/2017/06/logo-studer-reimann-1200x480.jpg">
+    </ion-card>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home">
+
+
+<form (ngSumbit)="submitRestaurant()">
+  <ion-item>
+  <ion-label> Restaurant: </ion-label>
+  <ion-input  type="text" [(ngModel)]="data[restaurant.id]" name = "restaurantName"> </ion-input>
+</ion-item>
+<ion-item>
+<button class="white" ion-button large full round color="dark" (click)="submitRestaurant()"> SUBMIT </button>
+  </ion-item>
+</form>
+</ion-content>

@@ -6,6 +6,8 @@ import {RestaurantServiceProvider} from "../../providers/restaurant-service/rest
 import {LunchVoteSession} from "../../session/lunch-vote-session";
 import {EmployeesPage} from "../employees/employees";
 import {SplittingPage} from "../splitting/splitting";
+import {AddEmployeePage} from "../addEmployeePage/addEmployeePage";
+import {RestaurantPage} from "../restaurantPage/restaurantPage";
 
 
 @Component({
@@ -25,7 +27,6 @@ export class HomePage {
                 public alertCtrl: AlertController,
                 public sessionService: LunchVoteSession,
                 public navController: NavController) {
-
     }
 
     ionViewDidLoad() {
@@ -37,7 +38,6 @@ export class HomePage {
             this.navController.setRoot(EmployeesPage);
         }
     }
-
 
     loadRestaurants() {
         return this.restaurantService.load()
@@ -52,8 +52,8 @@ export class HomePage {
             this.loadRestaurants();
         }).catch(() => {
             let alert = this.alertCtrl.create({
-                title: 'Du Schlingel',
-                subTitle: 'Kannst nur einmal voten pro Tag!!',
+                title: '',
+                subTitle: 'Du Schlingel, Du kannst nur einmal pro Tag abstimmen!',
                 buttons: ['OK']
             });
             alert.present();
@@ -71,4 +71,7 @@ export class HomePage {
         });
     }
 
+    addRestaurant(){
+    this.navController.push(RestaurantPage);
+    }
 }

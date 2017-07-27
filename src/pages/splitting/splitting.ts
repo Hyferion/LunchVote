@@ -47,7 +47,7 @@ export class SplittingPage {
             console.log('splitting okay');
             this.navController.setRoot(HomePage);
         }).catch(() => {
-            console.log('falied');
+            console.log('failed');
         });
     }
 }

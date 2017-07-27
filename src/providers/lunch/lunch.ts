@@ -14,7 +14,7 @@ export class LunchService {
     public haveLunch() {
         return new Promise(resolve => {
             let endpoint = this.config.get('rest_endpoint') + '/lunch';
-            // let endpoint = 'http://192.168.99.78:5000/lunch';
+            // let endpoint = 'http://192.168.99.53:5000/lunch';
             this.http.post(endpoint, null)
                 .subscribe(data => {
                     resolve(data['_body']);
